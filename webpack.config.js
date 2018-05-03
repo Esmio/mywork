@@ -1,7 +1,9 @@
 
 const path = require("path");
 const webpack = require("webpack");
-const bundlePath = path.resolve(__dirname, "/dist/");
+const bundlePath = path.resolve(__dirname, "./dist");
+
+console.log('bundlePath', bundlePath);
 
 module.exports = {
   entry: "./src/index.js",
@@ -21,8 +23,8 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    publicPath: bundlePath,
-    filename: "bundle.js"
+    publicPath: '/dist/',
+    filename: "bundle.js",
   },
   devServer: {
     contentBase: path.join(__dirname,'public'),
